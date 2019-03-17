@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.efenglu.protobuf;
+
+import "google/protobuf/wrappers.proto";
+
+option java_multiple_files = true;
+
+message AllTypes {
+    google.protobuf.BoolValue boolValueObject = 1;
+    google.protobuf.StringValue stringValueObject = 2;
+}

@@ -1,0 +1,7 @@
+public {{optionalCLass}}<{{javaFieldType}}> optional{{javaMethodName}}() {
+   if (has{{javaMethodName}}()) {
+     return {{optionalCLass}}.of(get{{javaMethodName}}());
+   } else {
+     return {{optionalCLass}}.empty();
+   }
+}

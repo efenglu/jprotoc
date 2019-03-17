@@ -1,0 +1,8 @@
+public Builder setOrClear{{javaMethodName}}({{javaFieldType}} value) {
+   if (value != null) {
+     return set{{javaMethodName}}(value);
+   } else {
+     clear{{javaMethodName}}();
+   }
+   return this;
+}
