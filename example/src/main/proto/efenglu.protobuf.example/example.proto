@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.efenglu.protobuf;
+
+option java_multiple_files = true;
+
+import "google/type/money.proto";
+
+message EmployeeProto {
+    string name = 1;
+    google.type.Money salary = 2;
+    google.type.Money bonus = 3;
+}

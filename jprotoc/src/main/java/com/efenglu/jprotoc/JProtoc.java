@@ -4,7 +4,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.Descriptors;
 import com.google.protobuf.compiler.PluginProtos;
-import com.salesforce.jprotoc.Generator;
 import com.salesforce.jprotoc.GeneratorException;
 import com.salesforce.jprotoc.ProtoTypeMap;
 import com.salesforce.jprotoc.ProtocPlugin;
@@ -18,15 +17,16 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class JProtoc extends Generator {
+public class JProtoc extends com.salesforce.jprotoc.Generator {
+
+    public static void main(String[] args) {
+        com.salesforce.jprotoc.ProtocPlugin.generate(new JProtoc());
+    }
+
     private static final String JAVA_EXTENSION = ".java";
     private ProtoTypeMap protoTypeMap;
     private String javaPackage;
     private DescriptorProtos.FileDescriptorProto fileDesc;
-
-    public static void main(String[] args) {
-        ProtocPlugin.generate(new JProtoc());
-    }
 
     @Override
     @SuppressWarnings("deprecation")
